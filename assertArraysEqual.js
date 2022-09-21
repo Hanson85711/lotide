@@ -6,6 +6,8 @@ const eqArrays = function(array1, array2) {
         isSame = false;
       }
     }
+  } else {
+    isSame = false;
   }
   return isSame;
 } 
