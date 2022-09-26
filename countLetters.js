@@ -20,6 +20,8 @@ const countLetters = function(sentence) {
   return countLetter;
 };
 
+module.exports = countLetters;
+
 
 const result1 = countLetters("LHL");
 assertEqual(result1["L"], 2);

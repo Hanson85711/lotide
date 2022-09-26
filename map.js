@@ -8,6 +8,7 @@ const map = function(array, callback) {
   return results;
 }
 
+module.exports = map;
 const eqArrays = function(array1, array2) {
   let isSame = true;
   if (array1.length === array2.length) {

@@ -15,6 +15,8 @@ const findKey = function(object, callback) {
   return undefined; //Explicitly stated to show that if no key found that matches returns undefined. 
 }
 
+module.exports = findKey;
+
 assertEqual (findKey({
   "Blue Hill": { stars: 1 },
   "Akaleri":   { stars: 3 },
