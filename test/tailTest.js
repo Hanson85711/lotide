@@ -1,21 +1,21 @@
 const tail = require('../tail');
-const assertEqual = require('../assertEqual');
-//Test Case 1
+const assert = require('chai').assert;
 
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2);
-assertEqual(result[0], "Lighthouse");
-assertEqual(result[1], "Labs");
+describe("#tail", () => {
+  it("returns ['Lighthouse', 'Labs'] for ['Hello', 'Lighthouse', 'Labs']", () => {
+    const result = tail(["Hello", "Lighthouse", "Labs"]);
+    assert.deepEqual(result, ['Lighthouse', 'Labs']);
+  });
 
-//Test Case 2
+  it("returns [2, 3, 4] for [1, 2, 3, 4]", () => {
+    const resultNums = tail([1 , 2 , 3 , 4]);
+    assert.deepEqual(resultNums, [2, 3, 4]);
+  }); 
 
-const resultNums = tail([1 , 2 , 3 , 4]);
-assertEqual(resultNums.length, 3);
-assertEqual(resultNums[0], 2);
-assertEqual(resultNums[1], 3);
-assertEqual(resultNums[2], 4);
+  it("Original Input of ['Yo Yo', 'Lighthouse', 'Labs'] should return to be the same when calling for original array", () => {
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    tail(words);
+    assert.deepEqual(words, ["Yo Yo", "Lighthouse", "Labs"]);
+  });
 
-//Test Case: Checking original Array isn't modified
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words);
-assertEqual(words.length, 3);
+})
